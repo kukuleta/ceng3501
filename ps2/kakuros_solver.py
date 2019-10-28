@@ -18,7 +18,7 @@ def Kakuros_Solver(sum_constraints):
         Cp_Model.Add(total_row_value = sum_constraits[row_index + 3])
         row_index = row_index + 1
 
-    columns_straightforward = [tableDomainConstraints[column][row] for column in range(2) for row in range(2)]
+    columns_straightforward = [tableDomainConstraints[column][row] for column in range(3) for row in range(3)]
     columns = [[columns_straightforward[0:3]],[columns_straightforward[3:6]],columns_straightforward[6:9]]
 
     for column_group in columns:
