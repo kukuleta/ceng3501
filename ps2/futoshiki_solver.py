@@ -8,9 +8,8 @@ def Futoshiki_Solver(constraints):
     column_letters = ["A","B","C","D"]
     for row in tableDomainConstraints:
         index = 0
-        for letter in column_letters:
-            row.append(Cp_Model.NewIntVar(1,4,"{letter}{index}".format(letter=letter,index=index)))
-            index = index + 1
+        row.append(Cp_Model.NewIntVar(1,4,"{letter}{index}".format(letter=column_letters[index],index=index % 4)))
+        index = index + 1
 
     columns_straightforward = [tableDomainConstraints[column][row] for column in range(4) for row in range(4)]
     columns = [[columns_straightforward[0:4]],[columns_straightforward[4:8]],
